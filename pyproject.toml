@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "crossref-academic-mcp-server"
+version = "0.1.0"
+description = "MCP Server for scientific papers, citations, and academic research — Crossref, OpenAlex, Semantic Scholar"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "AiAgentKarl"}
+]
+keywords = [
+    "mcp", "crossref", "academic", "papers", "citations",
+    "doi", "semantic-scholar", "openalex", "research", "science"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/AiAgentKarl/crossref-academic-mcp-server"
+Repository = "https://github.com/AiAgentKarl/crossref-academic-mcp-server"
+Issues = "https://github.com/AiAgentKarl/crossref-academic-mcp-server/issues"
+
+[project.scripts]
+crossref-server = "src.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
